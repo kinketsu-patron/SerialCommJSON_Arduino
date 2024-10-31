@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <Arduino_JSON.h>
 
 void setup(void)
 {
@@ -7,13 +8,26 @@ void setup(void)
 
 void loop(void)
 {
-    unsigned long second;
+    JSONVar human_dic;
+    JSONVar wife_dic;
     String message;
+    static uint16_t obj_no = 0U;
+    
+    wife_dic[ "name" ] = "Keiko";
+    wife_dic[ "age" ] = "30";
+    wife_dic[ "favorite_food" ][ 0 ] = "Chocolate";
+    wife_dic[ "favorite_food" ][ 1 ] = "Melon";
+    wife_dic[ "favorite_food" ][ 2 ] = "Waffle";
 
-    message = "It's passed ";
-    second = millis() / 1000;
-    message.concat(second);
-    message.concat(" second.");
-    Serial.println(message.c_str());
+    human_dic[ "obj_no" ] = ++obj_no;
+    human_dic[ "name" ] = "Taro";
+    human_dic[ "age" ] = 30;
+    human_dic[ "favorite_food" ][ 0 ] = "Orange";
+    human_dic[ "favorite_food" ][ 1 ] = "Banana";
+    human_dic[ "favorite_food" ][ 2 ] = "Peach";
+    human_dic[ "wife" ] = wife_dic;
+
+    message = JSON.stringify( human_dic );
+    Serial.println( message );
     delay(1000);
 }
