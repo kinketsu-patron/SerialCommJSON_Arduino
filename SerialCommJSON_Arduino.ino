@@ -14,12 +14,11 @@ void loop(void)
     static uint16_t obj_no = 0U;
     
     wife_dic[ "name" ] = "Keiko";
-    wife_dic[ "age" ] = "30";
+    wife_dic[ "age" ] = 29;
     wife_dic[ "favorite_food" ][ 0 ] = "Chocolate";
     wife_dic[ "favorite_food" ][ 1 ] = "Melon";
     wife_dic[ "favorite_food" ][ 2 ] = "Waffle";
 
-    human_dic[ "obj_no" ] = ++obj_no;
     human_dic[ "name" ] = "Taro";
     human_dic[ "age" ] = 30;
     human_dic[ "favorite_food" ][ 0 ] = "Orange";
