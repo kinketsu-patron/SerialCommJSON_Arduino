@@ -11,7 +11,6 @@ void loop(void)
     JSONVar human_dic;
     JSONVar wife_dic;
     String message;
-    static uint16_t obj_no = 0U;
     
     wife_dic[ "name" ] = "Keiko";
     wife_dic[ "age" ] = 29;
